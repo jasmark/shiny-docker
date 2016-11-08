@@ -2,10 +2,6 @@ FROM ubuntu:xenial
 
 MAINTAINER Jason Mark "jason.mark.01@gmail.com"
 
-# Fetching the key that signs the CRAN packages
-# Reference: http://cran.rstudio.com/bin/linux/ubuntu/README.html
-# RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E084DAB9
-
 RUN apt-get update && apt-get install -y \
     r-base \
     wget \
@@ -35,7 +31,7 @@ RUN wget http://download3.rstudio.org/ubuntu-12.04/x86_64/shiny-server-1.5.0.831
 
 EXPOSE 3838
 
-ENV LANG pt_BR.UTF-8
+ENV LANG en_US.UTF-8
 
 # shiny user is created by the Shiny Server package installed above
 # Change the UID/GID of shiny user/group, ownership of files and start

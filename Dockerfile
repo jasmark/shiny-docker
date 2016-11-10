@@ -38,11 +38,11 @@ ENV LANG en_US.UTF-8
 # shiny user is created by the Shiny Server package installed above
 # Change the UID/GID of shiny user/group, ownership of files and start
 # shiny-server
-RUN groupmod -g 100 shiny && \
+RUN groupmod -g 1000 shiny && \
     usermod -u 1002 shiny && \
-    chown -R 1002:100 /home/shiny && \
-    chown -R 1002:100 /var/log/shiny-server && \
-    chown -R 1002:100 /srv/shiny-server && \
-    chown -R 1002:100 /var/lib/shiny-server
+    chown -R 1002:1000 /home/shiny && \
+    chown -R 1002:1000 /var/log/shiny-server && \
+    chown -R 1002:1000 /srv/shiny-server && \
+    chown -R 1002:1000 /var/lib/shiny-server
     
 CMD ["/usr/bin/shiny-server"]

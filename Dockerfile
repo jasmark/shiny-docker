@@ -33,14 +33,16 @@ EXPOSE 3838
 
 ENV LANG en_US.UTF-8
 
+# TODO: This needs to be fixed/updated to use a passed UID value, but this works for testing.
+
 # shiny user is created by the Shiny Server package installed above
 # Change the UID/GID of shiny user/group, ownership of files and start
 # shiny-server
-RUN groupmod -g 999 shiny && \
-    usermod -u 999 shiny && \
-    chown -R 999:999 /home/shiny && \
-    chown -R 999:999 /var/log/shiny-server && \
-    chown -R 999:999 /srv/shiny-server && \
-    chown -R 999:999 /var/lib/shiny-server
+RUN groupmod -g 100 shiny && \
+    usermod -u 1002 shiny && \
+    chown -R 1002:100 /home/shiny && \
+    chown -R 1002:100 /var/log/shiny-server && \
+    chown -R 1002:100 /srv/shiny-server && \
+    chown -R 1002:100 /var/lib/shiny-server
     
 CMD ["/usr/bin/shiny-server"]

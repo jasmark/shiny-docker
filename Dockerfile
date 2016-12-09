@@ -20,6 +20,8 @@ RUN R -e "install.packages('shiny', repos='http://cran.rstudio.com/')" && \
     R -e "install.packages('labeling', repos='http://cran.rstudio.com/')" && \
     R -e "install.packages('reshape2', repos='http://cran.rstudio.com/')" && \
     R -e "install.packages('gridExtra', repos='http://cran.rstudio.com/')" && \
+    R -e "install.packages('DT', repos='http://cran.rstudio.com/')" && \
+    R -e "install.packages('forcats', repos='http://cran.rstudio.com/')" && \
     R -e "options(repos='http://cran.rstudio.com/');"
 
 

@@ -6,7 +6,9 @@ RUN apt-get update && apt-get install -y \
     r-base \
     wget \
     gdebi-core \
-    libssl-dev
+    libssl-dev \
+    sqlite3 \
+    libsqlite3-dev
 
 # Install R packages
 RUN R -e "install.packages('shiny', repos='http://cran.rstudio.com/')" && \
@@ -22,6 +24,7 @@ RUN R -e "install.packages('shiny', repos='http://cran.rstudio.com/')" && \
     R -e "install.packages('gridExtra', repos='http://cran.rstudio.com/')" && \
     R -e "install.packages('DT', repos='http://cran.rstudio.com/')" && \
     R -e "install.packages('forcats', repos='http://cran.rstudio.com/')" && \
+    R -e "install.packages('RSQLite', repos='http://cran.rstudio.com/')" && \
     R -e "options(repos='http://cran.rstudio.com/');"
 
 
